@@ -14,11 +14,12 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/dashLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-<!--            INTRO + BALANCE FIELD -->
+            <!--            INTRO + BALANCE FIELD -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,17 +67,20 @@
                             android:layout_weight="1"
                             android:scaleType="fitCenter"
                             tools:srcCompat="@tools:sample/avatars" />
+
                         <LinearLayout
-                            android:layout_weight="1"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:orientation="vertical">
+
                             <TextView
                                 android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Md Shefat"
                                 android:textColor="@color/black" />
+
                             <TextView
                                 android:id="@+id/textView5555"
                                 android:layout_width="wrap_content"
@@ -113,14 +117,14 @@
                         android:textColor="@color/black" />
 
                     <TextView
-                        android:textStyle="bold"
                         android:id="@+id/textView7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="BDT 95000.00"
                         android:textColor="@color/black"
-                        android:textSize="38sp" />
+                        android:textSize="38sp"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -213,7 +217,7 @@
             </LinearLayout>
 
 
-<!--            EXPENSE FIELD-->
+            <!--            EXPENSE FIELD-->
             <androidx.gridlayout.widget.GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -535,38 +539,45 @@
 
 
         </LinearLayout>
-    </ScrollView>
 
-<!--    BOTTOM BAR -->
+
+    </ScrollView>
+    <FrameLayout
+        android:id="@+id/fragmentcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <!--    BOTTOM BAR -->
 
     <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar"
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="10dp"
+        app:fabCradleVerticalOffset="10dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            app:fabCradleMargin="10dp"
-            app:fabCradleRoundedCornerRadius="10dp"
-            app:fabCradleVerticalOffset="10dp">
+            android:layout_marginRight="16dp"
+            android:background="@drawable/transparent_background"
+            android:paddingVertical="7dp"
+            app:menu="@menu/bottom_nav_menu" />
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottomNavigationView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="7dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/transparent_background"
-                app:menu="@menu/bottom_nav_menu" />
+    </com.google.android.material.bottomappbar.BottomAppBar>
 
-        </com.google.android.material.bottomappbar.BottomAppBar>
-
-<!--    FLOATING ADD ICON -->
+    <!--    FLOATING ADD ICON -->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/fab"
         android:src="@drawable/ic_baseline_add_circle_24"
-        app:layout_anchor="@id/bottomAppBar"/>
+        app:layout_anchor="@id/bottomAppBar" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
